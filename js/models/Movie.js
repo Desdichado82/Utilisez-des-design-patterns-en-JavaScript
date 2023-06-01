@@ -38,5 +38,3 @@ class Movie {
         return this._title.hasOwnProperty('fr') ? this._title['fr'] : this._title['en']
     }
 }
-
-
