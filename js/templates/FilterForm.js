@@ -1,5 +1,6 @@
 class FilterForm {
     constructor(Movies) {
+       
         this.Movies = Movies
 
         this.$wrapper = document.createElement('div')
@@ -8,7 +9,7 @@ class FilterForm {
     }
 
     async filterMovies(actor) {
-        console.log('actor:', actor); // log the value of the actor argument
+        console.log('filterMovies called with actor:', actor);
         this.clearMoviesWrapper()
 
         /* Vous pourrez par la suite supprimer ces lignes */
@@ -17,7 +18,6 @@ class FilterForm {
 
         const AdaptedFilterLib = new FilterMoviesAdapter(this.Movies, actor)
         const FilteredMovies = await AdaptedFilterLib.filterByActor()
-        console.log('FilteredMovies:', FilteredMovies); // log the value of the FilteredMovies 
 
         FilteredMovies.forEach(Movie => {
             const Template = new MovieCard(Movie)
@@ -26,9 +26,9 @@ class FilterForm {
     }
 
     onChangeFilter() {
-        this.$wrapper.querySelector('form')
+        this.$wrapper
+            .querySelector('form')
             .addEventListener('change', e => {
-                console.log('onChangeFilter called'); // log that onChangeFilter was called
                 const actor = e.target.value
                 this.filterMovies(actor)
             })
