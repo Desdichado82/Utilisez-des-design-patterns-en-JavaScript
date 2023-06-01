@@ -17,14 +17,20 @@
     <header class="main-header">
         <h1>Filmo Patterns</h1>
         <p>Des films et des design patterns</p>
+        <br />
+        Nombre d'envies : <span class="wish-count">0</span>
     </header>
-    <div class="filter-form-wrapper"></div>
+    <div class="forms-wrapper">
+        <div class="filter-form-wrapper"></div>
+        <div class="sorter-form-wrapper"></div>
+    </div>
     <main class="movies-wrapper"></main>
     <div class="modal"></div>
     
     <!-- Lib -->
     <script src="/lib/filter-v1/index.js"></script>
     <script src="/lib/filter-v2/index.js"></script>
+    <script src="/lib/sorter/index.js"></script>
 
     <!-- Factories -->
     <script src="/js/factories/MoviesFactory.js"></script>
@@ -45,11 +51,19 @@
     <script src="/js/templates/Modal.js"></script>
     <script src="/js/templates/FilterForm.js"></script>
     <script src="/js/templates/playerModal.js"></script>
+    <script src="/js/templates/SorterForm.js"></script>
     <!--decorators-->
     <script src="/js/decorators/movieCardWithPlayer.js"></script>
 
+      <!-- Proxy -->
+      <script src="/js/proxy/ProxyRatingSorter.js"></script>
+
     <!-- Api -->
     <script src="/js/api/Api.js"></script>
+
+    <!-- Pub/Sub -->
+    <script src="/js/wishlist/Subject.js"></script>
+    <script src="/js/wishlist/Counter.js"></script>
 
     <!-- Entry point -->
     <script src="/js/App.js"></script>
